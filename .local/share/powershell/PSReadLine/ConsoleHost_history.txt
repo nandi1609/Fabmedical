@@ -1,0 +1,224 @@
+$dnsArray=['10.48.39.4''10.48.39.5''10.48.39.6']
+$dnsArray='10.48.39.4','10.48.39.5','10.48.39.6'
+az network vnet update --resource-group $(resourceGroup.RESOURCE_NAME) --name $(virtualNetworkName) --dns-servers $(dnsArray)
+az network vnet update --resource-group $(resourceGroup.RESOURCE_NAME) --name $(virtualNetworkName) --dns-servers $dnsArray
+az network vnet update --resource-group USCCMP2MP2RSG01 --name USCCMP2MP2VNT01 --dns-servers $dnsArray
+az network vnet update --resource-group "$resourceGroup.RESOURCE_NAME" --name "$virtualNetworkName" --dns-servers "$dnsArray"
+az network vnet update --resource-group USCCMP2MP2RSG01 --name USCCMP2MP2VNT01 --dns-servers $(dnsArray)
+az network vnet update --resource-group USCCMP2MP2RSG01 --name USCCMP2MP2VNT01 --dns-servers $dnsArray
+az network vnet update --resource-group USCCMP2MP2RSG01 --name USCCMP2MP2VNT01 --dns-servers "$dnsArray"
+az network vnet update --resource-group USCCMP2MP2RSG01 --name USCCMP2MP2VNT01 --dns-servers $dnsArray
+az servicebus --help
+az servicebus topic --help
+az servicebus topic authorization-rule --help
+az servicebus topic authorization-rule create --help
+az vm --help
+az vm extension --help
+az vm extension set --help
+az vm extension image list
+az vm extension set --help
+az vm extension --help
+az vm extension list --help
+az vm extension get --help
+az vm extension --help
+az find vm extension
+az find vm extension --help
+az find vm extension
+$iisCheck=az vm extension list -g USCDGOE001RSG01 --vm-name USCDGOE001MVM02 --query "[?name=='CustomScriptExtension']" | ConvertFrom-Json
+$iisExists = $iisCheck.Length -gt 0
+echo "[variable=iisExists]$iisExists , $iisCheck"
+echo "[variable=iisExists]$iisExists , \n  $iisCheck"
+foreach ($vm in USCDGOE001MVM03,USCDGOE001MVM02){`
+az vm extension set --publisher Microsoft.Compute --version 1.8 --name CustomScriptExtension --vm-name $vm --resource-group $(resourceGroup.RESOURCE_NAME) --settings '{\"commandToExecute\":\"powershell.exe Install-WindowsFeature -Name Web-Server\"}'`
+}
+foreach ($vm in 'USCDGOE001MVM03','USCDGOE001MVM02'){`
+az vm extension set --publisher Microsoft.Compute --version 1.8 --name CustomScriptExtension --vm-name $vm --resource-group $(resourceGroup.RESOURCE_NAME) --settings '{\"commandToExecute\":\"powershell.exe Install-WindowsFeature -Name Web-Server\"}'`
+}
+foreach ($vm in 'USCDGOE001MVM03','USCDGOE001MVM02'){`
+az vm extension set --publisher Microsoft.Compute --version 1.8 --name CustomScriptExtension --vm-name $vm --resource-group USCDGOE001RSG01 --settings '{\"commandToExecute\":\"powershell.exe Install-WindowsFeature -Name Web-Server\"}'`
+}
+$vmName1=USCDGOE001MVM02
+$vmName1='USCDGOE001MVM02'
+$vmName2='USCDGOE001MVM03'
+foreach ($vm in $vmName1,$vmName2){`
+az vm extension set --publisher Microsoft.Compute --version 1.8 --name CustomScriptExtension --vm-name $vm --resource-group $(resourceGroup.RESOURCE_NAME) --settings '{\"commandToExecute\":\"powershell.exe Install-WindowsFeature -Name Web-Server\"}'`
+}
+foreach ($vm in $vmName1,$vmName2){`
+az vm extension set --publisher Microsoft.Compute --version 1.8 --name CustomScriptExtension --vm-name $vm --resource-group USCDGOE001RSG01 --settings '{\"commandToExecute\":\"powershell.exe Install-WindowsFeature -Name Web-Server\"}'`
+}
+foreach ($vm in $vmName1,$vmName2){`
+                    az vm extension set --publisher Microsoft.Compute --version 1.8 --name CustomScriptExtension --vm-name $vm --resource-group USCDGOE001RSG01 --settings '{\"commandToExecute\":\"powershell.exe Install-WindowsFeature -Name Web-Server\"}'`
+                    $iisCheck=az vm extension list -g USCDGOE001RSG01 --vm-name $vm --query "[?name=='CustomScriptExtension']" | ConvertFrom-Json`
+                    $iisExists = $iisCheck.Length -gt 0`
+                    echo "[variable=iisExists]$iisExists, $iisCheck" }
+foreach ($vm in $vmName1,$vmName2){`
+                    az vm extension set --publisher Microsoft.Compute --version 1.8 --name CustomScriptExtension --vm-name $vm --resource-group USCDGOE001RSG01 --settings '{\"commandToExecute\":\"powershell.exe Install-WindowsFeature -Name Web-Server\"}'}`
+                    $iisCheck=az vm extension list -g USCDGOE001RSG01 --vm-name $vm --query "[?name=='CustomScriptExtension']" | ConvertFrom-Json`
+                    $iisExists = $iisCheck.Length -gt 0`
+                    echo "[variable=iisExists]$iisExists, $iisCheck" 
+foreach ($vm in $vmName1,$vmName2){{`
+                    az vm extension set --publisher Microsoft.Compute --version 1.8 --name CustomScriptExtension --vm-name $vm --resource-group USCDGOE001RSG01 --settings '{\"commandToExecute\":\"powershell.exe Install-WindowsFeature -Name Web-Server\"}'}`
+                    $iisCheck=az vm extension list -g USCDGOE001RSG01 --vm-name $vm --query "[?name=='CustomScriptExtension']" | ConvertFrom-Json`
+                    $iisExists = $iisCheck.Length -gt 0`
+                    echo "[variable=iisExists]$iisExists, $iisCheck" }
+foreach($vm in $vmName1,$vmName2)`
+                  {`
+                    az vm extension set --publisher Microsoft.Compute --version 1.8 --name CustomScriptExtension --vm-name $vm --resource-group USCDGOE001RSG01 --settings '{\"commandToExecute\":\"powershell.exe Install-WindowsFeature -Name Web-Server\"}'`
+                    $iisCheck=az vm extension list -g USCDGOE001RSG01 --vm-name $vm --query "[?name=='CustomScriptExtension']" | ConvertFrom-Json`
+                    $iisExists = $iisCheck.Length -gt 0`
+                    echo "[variable=iisExists]$iisExists, $iisCheck"`
+                  }
+$vmName1='USCDGOE001MVM02'
+$vmName2='USCDGOE001MVM03'
+foreach($vm in $vmName1,$vmName2)`
+                  {`
+                    az vm extension set --publisher Microsoft.Compute --version 1.8 --name CustomScriptExtension --vm-name $vm --resource-group USCDGOE001RSG01 --settings '{\"commandToExecute\":\"powershell.exe Install-WindowsFeature -Name Web-Server\"}'`
+                    $iisCheck=az vm extension list -g USCDGOE001RSG01 --vm-name $vm --query "[?name=='CustomScriptExtension']" | ConvertFrom-Json`
+                    $iisExists = $iisCheck.Length -gt 0`
+                    echo "[variable=iisExists]$iisExists, $iisCheck"`
+                  }
+$vmArray=($vmName1,$vmName2)
+foreach($vm in $vmArray)`
+                  {`
+                    az vm extension set --publisher Microsoft.Compute --version 1.8 --name CustomScriptExtension --vm-name $vm --resource-group USCDGOE001RSG01 --settings '{\"commandToExecute\":\"powershell.exe Install-WindowsFeature -Name Web-Server\"}'`
+                    $iisCheck=az vm extension list -g USCDGOE001RSG01 --vm-name $vm --query "[?name=='CustomScriptExtension']" | ConvertFrom-Json`
+                    $iisExists = $iisCheck.Length -gt 0`
+                    echo "[variable=iisExists]$iisExists, $iisCheck"`
+                  }
+$vmName1='USCDGOE001MVM02'
+$vmName2='USCDGOE001MVM03'
+$vmName1='USCDGOE001MVM02'
+$vmArray=$vmName1,$vmName2
+foreach($vm in $vmArray)`
+                  {`
+                    az vm extension set --publisher Microsoft.Compute --version 1.8 --name CustomScriptExtension --vm-name $vm --resource-group USCDGOE001RSG01 --settings '{\"commandToExecute\":\"powershell.exe Install-WindowsFeature -Name Web-Server\"}'`
+                    $iisCheck=az vm extension list -g USCDGOE001RSG01 --vm-name $vm --query "[?name=='CustomScriptExtension']" | ConvertFrom-Json`
+                    $iisExists = $iisCheck.Length -gt 0`
+                    echo "[variable=iisExists]$iisExists, $iisCheck"`
+                  }
+@@@@@@@T�@@@�O�@@@@@@@@@@Shell_profile.p@n@m@l@m@p@s@@@@@@@@@�@@@@@@@a@n@a@g@e@m@e@n@t@.@A@u@t@o@m@a@@@@@@@@@@@@@@@@@t@.@A@u@���Q@@���Q@@
+$x509Cert = new-object System.Security.Cryptography.X509Certificates.X509Certificate2
+$type = [System.Security.Cryptography.X509Certificates.X509ContentType]::Pfx
+# Write to a file
+$x509Cert = new-object System.Security.Cryptography.X509Certificates.X509Certificate2
+$type = [System.Security.Cryptography.X509Certificates.X509ContentType]::Pfx
+# Write to a file
+$vaultName = "USCQMP2MP2AKV01"
+$certificateName = "qa-mp-goes-ey-com"
+$pfxPath = [Environment]::GetFolderPath("Desktop\Certificate-MSMQ-GOES") + "\$certificateName.pfx"
+$pfxPath = [Environment]::GetFolderPath("Certificate-MSMQ-GOES") + "\$certificateName.pfx"
+$pfxPath = [Environment]::GetFolderPath("Desktop") + "\$certificateName.pfx"
+$pfx = New-Object Security.Cryptography.X509Certificates.X509Certificate2
+[IO.File]::WriteAllBytes($pfxPath, $pfxProtectedBytes)
+$pfx = New-Object Security.Cryptography.X509Certificates.X509Certificate2
+[IO.File]::WriteAllBytes($pfxPath, $pfxProtectedBytes)
+$null=0
+$pfx = New-Object Security.Cryptography.X509Certificates.X509Certificate2
+$x509Cert = new-object System.Security.Cryptography.X509Certificates.X509Certificate2
+$type = [System.Security.Cryptography.X509Certificates.X509ContentType]::Pfx
+# Write to a file
+$x509Cert = new-object System.Security.Cryptography.X509Certificates.X509Certificate2
+$type = [System.Security.Cryptography.X509Certificates.X509ContentType]::Pfx
+# Write to a file
+$vaultName = "USCQMP2MP2AKV01"
+$certificateName = "qa-mp-goes-ey-com"
+$pfxPath = [Environment]::GetFolderPath("Desktop") + "\$certificateName.pfx"
+$pfx = New-Object Security.Cryptography.X509Certificates.X509Certificate2
+[IO.File]::WriteAllBytes($pfxPath, $pfxProtectedBytes)
+$PSVersionTable.PSVersion
+Set-Powershell -version 5
+Set-Powershell -version --help
+Set-Powershell --help
+PSVersion --help
+$PSVersionTable --help
+# Install Az version 3.6.1
+Install-Module -Name Az -RequiredVersion 5.6.1
+# Load Az version 3.6.1
+[IO.File]::WriteAllBytes($pfxPath, $pfxProtectedBytes)
+$vaultName = "USCQMP2MP2AKV01"
+$certificateName = "qa-mp-goes-ey-com"
+$pfxPath = [Environment]::GetFolderPath("Desktop") + "\$certificateName.pfx"
+$null=0
+[IO.File]::WriteAllBytes($pfxPath, $pfxProtectedBytes)
+az network application-gateway ssl-cert
+az network application-gateway ssl-cert --help
+az network application-gateway ssl-cert list --gateway-name USCUGOEU01AAG01 --resource-group USCUGOEU01RSG01
+Test-NetConnection -ComputerName https://uat-mp-goesadmin.ey.net -Port 443
+az functionapp cors add -g USCUGOCU01RSG01 -n USCUGOCU01AZF01 --allowed-origins https://functions-staging.azure.com
+az account list --output table
+az resource list --subscription 'EY-CTSBP-PROD-TAX-EYMP-01-39998672'
+az resource list --subscription 'EY-CTSBP-PROD-TAX-EYMP-01-39998672' --resource-group USCUGOCU01RSG01
+az network application-gateway ssl-cert list --gateway-name USCUGOEU03AAG01 --resource-group USCUGOEU03RSG01
+az network application-gateway http-settings create --help
+az network application-gateway http-settings update --help
+az network watcher flow-log configure --help
+az find "az network watcher flow-log configure"
+az webapp list-runtimes --linux
+az
+az account tenant list
+Get-AzureADTenantDetail
+Connect-AzureAD
+Get-AzureADTenantDetail
+az login
+az network application-gateway ssl-cert list -g USCDMP2MP2RSG01 --gateway-name USCDMP2MP2AAG01
+az network application-gateway ssl-cert delete -g USCDMP2MP2RSG01 --gateway-name USCDMP2MP2AAG01 -n dev-mp-goesadmin
+az network application-gateway ssl-cert delete -g USCDMP2MP2RSG01 --gateway-name USCDMP2MP2AAG01 -ids "/subscriptions/2dbae6c9-08c9-4f7d-a794-7b3c1d343398/resourceGroups/USCDMP2MP2RSG01/providers/Microsoft.Network/applicationGateways/USCDMP2MP2AAG01/sslCertificates/dev-mp-goesadmin"
+az network application-gateway ssl-cert delete --ids {/subscriptions/2dbae6c9-08c9-4f7d-a794-7b3c1d343398/resourceGroups/USCDMP2MP2RSG01/providers/Microsoft.Network/applicationGateways/USCDMP2MP2AAG01/sslCertificates/dev-mp-goesadmin}
+az network application-gateway ssl-cert delete -g USCDMP2MP2RSG01 --gateway-name USCDMP2MP2AAG01 -n "dev-mp-goesadmin"
+az network application-gateway ssl-cert delete -g USCDMP2MP2RSG01 --gateway-name USCDMP2MP2AAG01 -n appGatewayListenerGOESAdminvaultCert
+az network application-gateway ssl-cert delete -g USCDMP2MP2RSG01 --gateway-name USCDMP2MP2AAG01 -n "dev-mp-goesadmin"
+az ad sp list --all
+az ad sp show --id 96fff664-8b5d-4401-aed4-5edbc46829ff
+az ad app credential list --id 96fff664-8b5d-4401-aed4-5edbc46829ff
+[Yesterday 08:45 pm] Rayadurgam Chandini
+    az ad sp show --id 00000000-0000-0000-0000-000000000000
+az ad sp show --id 96fff664-8b5d-4401-aed4-5edbc46829ff
+az ad sp show --id 03e0b517-5405-4d2b-a608-6abd3c988729
+az ad sp show --id 96fff664-8b5d-4401-aed4-5edbc46829ff
+az ad sp show --id 4090ef10-022a-415f-a588-877e178cab44
+az ad sp show --id 03e0b517-5405-4d2b-a608-6abd3c988729
+Get-AzADAppCredential -ObjectId 4090ef10-022a-415f-a588-877e178cab44
+Get-AzADAppCredential -ObjectId 45765e16-f7fd-45e9-8fd8-be4d0c6069b5
+Get-AzADApplication -SearchString CTP-Codev-TAX-EYMP-APP-D04
+Get-AzADServicePrincipal -SearchString CTP-Codev-TAX-EYMP-APP-D04
+Get-AzADApplication -SearchString CTP-Codev-TAX-EYMP-APP-D04
+Get-AzADApplication -ApplicationId 933f47c0-64e4-45ff-95b1-2f04139394eb
+Get-AzADAppCredential
+   -DisplayName <String>
+   [-DefaultProfile <IAzureContextContainer>]
+   [<CommonParameters>]
+Get-AzADAppCredential
+Get-AzADApplication -ApplicationId f5e6e782-3e86-4c2c-97f1-a7c0e7b728a5
+Get-AzADAppCredential
+Get-AzADApplication -ApplicationId 0fe93f19-1b92-4c7d-beae-fa11c0e8d76e
+Get-AzADAppCredential
+Get-AzADApplication -ApplicationId fcd2fcc4-532e-4465-9994-c06e7b6b1517
+Get-AzADAppCredential
+az ad sp list --query "[?contains(hompage, 'EYMP')]" --all
+name
+az ad sp list --query "[?contains(name, 'EYMP')]" --all
+wq
+:wq
+:
+az ad sp list --query "[?contains(name, 'EYMP')]" --all
+az ad sp list --query "[?contains(name, 'CTP-Codev-TAX-EYMP-APP-P03')]"
+Get-AzADApplication -ApplicationId fcd2fcc4-532e-4465-9994-c06e7b6b1517
+az ad sp list --query "[?contains(DisplayName, 'CTP-Codev-TAX-EYMP-APP-P03')]"
+az ad sp list --query "[?contains(DisplayName, 'EYMP')]"
+Get-AzADApplication
+az vmss extension delete --name CustomScriptExtension --resource-group USCQMP2MP2RSG03 --vmss-name USCQMP2MP2MSS01
+choco install packer
+az vmss extension delete --name CustomScriptExtension --resource-group USCQMP2MP2RSG03 --vmss-name USCQMP2MP2MSS01
+select-Azsubscription -Subscription "EY-CTSBP-NON-PROD-TAX-EYMP-02-39998672"
+az vmss extension delete --name CustomScriptExtension --resource-group USCQMP2MP2RSG03 --vmss-name USCQMP2MP2MSS01
+az account set --subscription 35532fe3-42c4... by Ramachandra Nayak
+Ramachandra Nayak04:31 pm
+az account set --subscription 35532fe3-42c4-47d4-91fb-adb926a46081
+az provider register --namespace Microsoft.DataMigration
+ip=$(curl -s https://api.ipify.org)
+    rsg=fabmedical-NRB
+    nsg=fabmedical-NRB-nsg
+    az network nsg rule create -g $rsg --nsg-name $nsg -n SSH_IN --priority 110 \
+    --source-address-prefixes $ip --source-port-ranges '*' \
+    --destination-address-prefixes '*' --destination-port-ranges 22 --access Allow \
+ip=$(curl -s https://api.ipify.org)

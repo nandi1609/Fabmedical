@@ -1,0 +1,20 @@
+2021-05-20T16:19:37.2471753Z	Info      	Logger.Initialize                       	Logging initialized at level: Info
+2021-05-20T16:19:37.2472548Z	Info      	Logger.Initialize                       	Logged in at: cc-8ce32cc0-77fb684b68-bqjhj
+2021-05-20T16:19:37.2479431Z	Info      	LogAssemblyInfo                         	Running assembly 	 assemblyInfo : Microsoft.Open.Azure.AD.CommonLibrary, Version=0.10.0.0, Culture=neutral, PublicKeyToken=null 	 assemblyLocation : /usr/local/share/powershell/Modules/AzureAD.Standard.Preview/0.0.0.10/netstandard2.0/Microsoft.Open.Azure.AD.CommonLibrary.dll 	 assemblyName : Microsoft.Open.Azure.AD.CommonLibrary, Version=0.10.0.0, Culture=neutral, PublicKeyToken=null	 assemblyVersion : 0.10.0.0 	 fileVersion : 0.10.0.0 	 productVersion : 0.10.0
+2021-05-20T16:19:37.2480544Z	Info      	Connect-AzureAD.BeginProcessing         	Connecting to the AzureCloud environment.
+2021-05-20T16:19:37.2831610Z	Info      	Connect-AzureAD.ProcessRecord           	Connect to AzureAD with ManagedServiceLogin.
+2021-05-20T16:19:37.2853993Z	Info      	Connect-AzureAD.ProcessRecord           	Azure account type: ManagedService
+2021-05-20T16:19:39.6872972Z	Info      	Connect-AzureAD.ProcessRecord           	Session created with. Account: MSI@50342, Environment: AzureCloud, Tenant: 5b973f99-77df-4beb-b27d-aa0c70b8482c, domainName: EYGS.onmicrosoft.com, AccountType: ManagedService.
+2021-05-20T16:19:43.5027533Z	Info      	Get-AzureADTenantDetail.ProcessRecord   	Executing cmdlet.
+2021-05-20T16:19:43.5030708Z	Info      	Get-AzureADTenantDetail.ProcessRecord   	Correlation Id for the operation is : 1f67422a-d2b6-4a4f-849c-7b748c9281fc
+2021-05-20T16:19:43.5030938Z	Info      	Get-AzureADTenantDetail.ProcessRecord   	Connecting to graph resource URL: https://graph.windows.net
+2021-05-20T16:19:43.5244267Z	Info      	Get-AzureADTenantDetail.ProcessRecord   	Executing the query for the tenant id: 5b973f99-77df-4beb-b27d-aa0c70b8482c
+2021-05-20T16:19:43.5245098Z	Info      	Get-AzureADTenantDetail.ProcessRecord   	Executing the query for the graph api version: 1.6
+2021-05-20T16:19:43.5245451Z	Info      	Get-AzureADTenantDetail.ProcessRecord   	Value for Parameter All: 
+2021-05-20T16:19:43.5245765Z	Info      	Get-AzureADTenantDetail.ProcessRecord   	Value for Parameter Top: 
+2021-05-20T16:19:43.5245832Z	Info      	Get-AzureADTenantDetail.ProcessRecord   	Number of top results requested: 100
+2021-05-20T16:19:44.0262832Z	Info      	GetTenantDetails                        	Request URL: https://graph.windows.net/5b973f99-77df-4beb-b27d-aa0c70b8482c/tenantDetails?api-version=1.6
+2021-05-20T16:19:44.0263397Z	Info      	GetTenantDetails                        	Response Header request-id : befad29c-ae41-4855-9b92-b1bc5c2f8eb4.
+2021-05-20T16:19:44.0263463Z	Info      	GetTenantDetails                        	Response Header client-request-id : 1f67422a-d2b6-4a4f-849c-7b748c9281fc.
+2021-05-20T16:19:44.0263512Z	Info      	GetTenantDetails                        	Response Header Duration : 2458151.
+2021-05-20T16:19:44.0266040Z	Info      	GetTenantDetails                        	Response for operation : 	StatusCode OK	StatusDescription OK	ResponseStatus Completed 
